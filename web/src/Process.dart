@@ -2,16 +2,23 @@ import 'dart:math' as math;
 
 class Process {
   int id;
-  int size;
   int duration;
   int state = 0;
+  int progress = 0;
   String color =
       'rgb(${math.Random().nextInt(255)}, ${math.Random().nextInt(255)}, ${math.Random().nextInt(255)})';
 
-  Process(int size, int id, int duration) {
-    this.size = size;
+  Process(int id, int duration) {
     this.id = id;
     this.duration = duration;
+  }
+
+  int setProgress(int progress) {
+    this.progress = progress;
+  }
+
+  int getProgress() {
+    return progress;
   }
 
   int getId() {
@@ -36,10 +43,6 @@ class Process {
 
   void setDuration(int duration) {
     this.duration = duration;
-  }
-
-  int getSize() {
-    return size;
   }
 
   String getColor() {
